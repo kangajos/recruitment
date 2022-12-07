@@ -13,6 +13,8 @@ class DashboardController extends Controller
     #[Get('dashboard', name: 'dashboard')]
     public function index(): InertiaResponse
     {
+        // return redirect()->intended("todolist");
+        
         return Inertia::render('Dashboard');
     }
 }

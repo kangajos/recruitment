@@ -57,4 +57,9 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function getTodolistAndTodolistItems()
+    {
+        return $this->hasManyThrough(Todolist::class, TodolistDetail::class, "user_id", "user_id")->latest();
+    }
 }
